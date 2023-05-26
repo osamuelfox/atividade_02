@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App Lista</string>
+    <string name="txt_titulo">App Compras</string>
+    <string name="txt_hint_edit_NomeProduto">Nome do Produto</string>
+    <string name="txt_hint_edit_Quantidade">Quantidade</string>
+    <string name="txt_hint_edit_Local">Local da Compra</string>
+    <string name="txt_button_Limpar">Limpar</string>
+    <string name="txt_button_Salvar">Salvar</string>
+    <string name="txt_button_Finalizar">Finalizar</string>
+</resources>

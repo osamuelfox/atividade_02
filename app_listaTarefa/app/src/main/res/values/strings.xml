@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App Lista</string>
+    <string name="txt_titulo">App Lista</string>
+    <string name="txt_hint_edit_Nome">Nome da Tarefa</string>
+    <string name="txt_hint_edit_descricao">Descricao</string>
+    <string name="txt_hint_edit_Data">Data de Conclucao (dd/mm/yyyy)</string>
+    <string name="txt_button_Limpar">Limpar</string>
+    <string name="txt_button_Salvar">Salvar</string>
+    <string name="txt_button_Finalizar">Finalizar</string>
+</resources>
