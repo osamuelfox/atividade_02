@@ -5,24 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.MainActivity"
-    tools:layout_editor_absoluteX="5dp"
-    tools:layout_editor_absoluteY="198dp">
-
-    <EditText
-        android:id="@+id/text_TituloDoCompromisso"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="96dp"
-        android:ems="10"
-        android:hint="@string/txt_hint_edit_TituloDoCompromisso"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
-        tools:ignore="MissingConstraints" />
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="94dp">
 
     <EditText
         android:id="@+id/text_Local"
@@ -35,9 +19,23 @@
         android:importantForAutofill="no"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Hora"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/text_TituloDoCompromisso"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_TituloDoCompromisso"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -45,13 +43,12 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/txt_hint_edit_Hora"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Data"
         tools:ignore="MissingConstraints" />
@@ -61,13 +58,12 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/txt_hint_edit_Data"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_TituloDoCompromisso"
         tools:ignore="MissingConstraints" />

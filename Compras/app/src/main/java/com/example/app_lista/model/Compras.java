@@ -6,7 +6,6 @@ public class Compras {
     private String Quantidae;
     private String Local;
 
-
     public Compras(){
 
     }
@@ -16,6 +15,9 @@ public class Compras {
         this.Quantidae = Quantidae;
         this.Local = Local;
 
+    }
+
+    public Compras(String listaCompras) {
     }
 
     public String getNome() {

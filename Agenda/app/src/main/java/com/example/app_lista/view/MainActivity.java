@@ -10,15 +10,20 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app_lista.R;
+import com.example.app_lista.controller.AgendaController;
+import com.example.app_lista.controller.ListaController;
 import com.example.app_lista.model.Agenda;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     Agenda agenda;
     Agenda outraAgenda;
+    List<Agenda> listaAgenda;
 
-    String dadosCompras;
-    String dadosOutraCompra;
+    AgendaController controller;
+    ListaController listaController;
 
     EditText editTituloDoCompromisso;
     EditText editdata;
@@ -29,31 +34,27 @@ public class MainActivity extends AppCompatActivity {
     Button btnbuton_Salvar;
     Button btnbuton_Finalizar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        agenda = new Agenda();
-        agenda.setTitulo("Estudar");
-        agenda.setData("26/07/2012");
-        agenda.setHora("12:33");
-        agenda.setLocal("Escola");
+        ListaController listaController = new ListaController();
 
+        listaAgenda = listaController.getListaAgenda();
+
+        listaController.getListaAgenda();
+
+        controller = new AgendaController(MainActivity.this);
+        controller.toString();
 
         outraAgenda = new Agenda();
-        outraAgenda.setTitulo("Ir trabalhar");
-        outraAgenda.setData("12/08/2023");
-        outraAgenda.setHora("07:00");
-        outraAgenda.setLocal("Trabalho");
-
+        controller.buscar(outraAgenda);
 
         editTituloDoCompromisso = findViewById(R.id.text_TituloDoCompromisso);
         editdata = findViewById(R.id.text_Data);
         editHora = findViewById(R.id.text_Hora);
         editLocal = findViewById(R.id.text_Local);
-
 
         btnbuton_Limpar = findViewById(R.id.button_Limpar);
         btnbuton_Salvar = findViewById(R.id.button_Salvar);
@@ -62,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
         editTituloDoCompromisso.setText(agenda.getTitulo());
         editdata.setText(agenda.getData());
         editHora.setText(agenda.getHora());
-        editLocal.setText(agenda.getLocal());
-
+        editLocal.setText(agenda.getLocal())    ;
 
         btnbuton_Limpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,41 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-/*
-        dadosPessoa = "Primeiro nome: ";
-        dadosPessoa += pessoa.getNome();
-        dadosPessoa += "Sobrenome: ";
-        dadosPessoa += pessoa.getSobreNome();
-        dadosPessoa += "Nome do curso: ";
-        dadosPessoa += pessoa.getNomeCurso();
-        dadosPessoa += "Telefone: ";
-        dadosPessoa += pessoa.getTelefone();*/
 
-        /*dadosOutaPessoa = "Primeiro nome: ";
-        dadosOutaPessoa += outraPessoa.getNome();
-        dadosOutaPessoa += "Sobrenome: ";
-        dadosOutaPessoa += outraPessoa.getNome();
-        dadosOutaPessoa += "Nome do curso: ";
-        dadosOutaPessoa += outraPessoa.getNomeCurso();
-        dadosOutaPessoa += "Telefone: ";
-        dadosOutaPessoa += outraPessoa.getTelefone();*/
-
-        Log.i("ProgramacaoPOO", agenda.toString());
         Log.i("ProgramacaoPOO", outraAgenda.toString());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

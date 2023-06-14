@@ -33,7 +33,7 @@
         android:ems="10"
         android:hint="@string/txt_hint_edit_Quantidade"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_NomeProduto"

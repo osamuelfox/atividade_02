@@ -17,9 +17,6 @@ public class MainActivity extends AppCompatActivity {
     Lista lista;
     Lista outraLista;
 
-    String dadosLista;
-    String dadosOutaLista;
-
     EditText editNome;
     EditText editDescricao;
     EditText editData;
@@ -61,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         btnbuton_Limpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this, " Limpo ", Toast.LENGTH_SHORT).show();
                 editNome.setText("");
                 editDescricao.setText("");
                 editData.setText("");
@@ -88,41 +86,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-/*
-        dadosPessoa = "Primeiro nome: ";
-        dadosPessoa += pessoa.getNome();
-        dadosPessoa += "Sobrenome: ";
-        dadosPessoa += pessoa.getSobreNome();
-        dadosPessoa += "Nome do curso: ";
-        dadosPessoa += pessoa.getNomeCurso();
-        dadosPessoa += "Telefone: ";
-        dadosPessoa += pessoa.getTelefone();*/
-
-        /*dadosOutaPessoa = "Primeiro nome: ";
-        dadosOutaPessoa += outraPessoa.getNome();
-        dadosOutaPessoa += "Sobrenome: ";
-        dadosOutaPessoa += outraPessoa.getNome();
-        dadosOutaPessoa += "Nome do curso: ";
-        dadosOutaPessoa += outraPessoa.getNomeCurso();
-        dadosOutaPessoa += "Telefone: ";
-        dadosOutaPessoa += outraPessoa.getTelefone();*/
 
         Log.i("ProgramacaoPOO", lista.toString());
         Log.i("ProgramacaoPOO", outraLista.toString());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

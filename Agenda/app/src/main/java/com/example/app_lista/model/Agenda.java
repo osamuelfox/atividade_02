@@ -7,12 +7,10 @@ public class Agenda {
     private String hora;
     private String local;
 
-
     public Agenda(){
-
     }
 
-    public Agenda(String titulo, String data, String hora, String local) {
+    public Agenda(String titulo) {
         this.titulo = titulo;
         this.data = data;
         this.hora = hora;
@@ -49,5 +47,15 @@ public class Agenda {
 
     public void setLocal(String local) {
         this.local = local;
+    }
+
+    @Override
+    public String toString() {
+        return "Agenda{" +
+                "titulo='" + titulo + '\'' +
+                ", data='" + data + '\'' +
+                ", hora='" + hora + '\'' +
+                ", local='" + local + '\'' +
+                '}';
     }
 }

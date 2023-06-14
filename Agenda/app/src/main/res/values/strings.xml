@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App Lista</string>
+    <string name="app_name">App Agenda</string>
     <string name="txt_titulo">App Agenda</string>
     <string name="txt_hint_edit_TituloDoCompromisso">Titulo do Compromisso</string>
     <string name="txt_hint_edit_Data">Data (dd/mm/yyy)</string>

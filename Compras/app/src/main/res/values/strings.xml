@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App Lista</string>
+    <string name="app_name">App Compras</string>
     <string name="txt_titulo">App Compras</string>
     <string name="txt_hint_edit_NomeProduto">Nome do Produto</string>
     <string name="txt_hint_edit_Quantidade">Quantidade</string>

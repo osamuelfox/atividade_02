@@ -8,51 +8,6 @@
     tools:layout_editor_absoluteX="5dp"
     tools:layout_editor_absoluteY="198dp">
 
-    <EditText
-        android:id="@+id/text_Nome"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="168dp"
-        android:ems="10"
-        android:hint="@string/txt_hint_edit_Nome"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/text_Data"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/txt_hint_edit_Data"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Descricao"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/text_Descricao"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/txt_hint_edit_descricao"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Nome"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
@@ -69,16 +24,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_marginBaseline="10dp" />
 
-    <Button
-        android:id="@+id/button_Limpar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:text="@string/txt_button_Limpar"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/text_Nome"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="128dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_Nome"
+        android:importantForAutofill="no"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/text_Descricao"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_descricao"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Nome"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/text_Data"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_Data"
+        android:importantForAutofill="no"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Descricao"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button_Salvar"
@@ -89,7 +78,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.846"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Data"
+        app:layout_constraintVertical_bias="0.979" />
+
+    <Button
+        android:id="@+id/button_Limpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="@string/txt_button_Limpar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Data"
+        app:layout_constraintVertical_bias="0.979" />
 
     <Button
         android:id="@+id/button_Finalizar"

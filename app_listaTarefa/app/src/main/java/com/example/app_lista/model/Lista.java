@@ -41,4 +41,13 @@ public class Lista {
     public void setData(String data) {
         Data = data;
     }
+
+    @Override
+    public String toString() {
+        return "Lista{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", Data='" + Data + '\'' +
+                '}';
+    }
 }

@@ -10,15 +10,20 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app_lista.R;
+import com.example.app_lista.controller.ComprasController;
+import com.example.app_lista.controller.ListaController;
 import com.example.app_lista.model.Compras;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     Compras compras;
     Compras outraCompras;
+    List<Compras> listaCompras;
 
-    String dadosCompras;
-    String dadosOutraCompra;
+    ComprasController controller;
+    ListaController listaController;
 
     EditText editNomeProduto;
     EditText editQuantidade;
@@ -28,23 +33,20 @@ public class MainActivity extends AppCompatActivity {
     Button btnbuton_Salvar;
     Button btnbuton_Finalizar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        compras = new Compras();
-        compras.setNome("Pão");
-        compras.setQuantidae("10");
-        compras.setLocal("Padaria");
+        ListaController listaController = new ListaController();
 
+        listaController.getListaCompras();
+
+        controller = new ComprasController(MainActivity.this);
+        controller.toString();
 
         outraCompras = new Compras();
-        outraCompras.setNome("Maça");
-        outraCompras.setQuantidae("4");
-        outraCompras.setLocal("Super Mercado");
-
+        controller.buscar(outraCompras);
 
         editNomeProduto = findViewById(R.id.text_NomeProduto);
         editQuantidade = findViewById(R.id.text_Quantidade);
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         btnbuton_Limpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this, " Limpo ", Toast.LENGTH_SHORT).show();
                 editNomeProduto.setText("");
                 editQuantidade.setText("");
                 editLocal.setText("");
@@ -90,29 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-/*
-        dadosPessoa = "Primeiro nome: ";
-        dadosPessoa += pessoa.getNome();
-        dadosPessoa += "Sobrenome: ";
-        dadosPessoa += pessoa.getSobreNome();
-        dadosPessoa += "Nome do curso: ";
-        dadosPessoa += pessoa.getNomeCurso();
-        dadosPessoa += "Telefone: ";
-        dadosPessoa += pessoa.getTelefone();*/
 
-        /*dadosOutaPessoa = "Primeiro nome: ";
-        dadosOutaPessoa += outraPessoa.getNome();
-        dadosOutaPessoa += "Sobrenome: ";
-        dadosOutaPessoa += outraPessoa.getNome();
-        dadosOutaPessoa += "Nome do curso: ";
-        dadosOutaPessoa += outraPessoa.getNomeCurso();
-        dadosOutaPessoa += "Telefone: ";
-        dadosOutaPessoa += outraPessoa.getTelefone();*/
-
-        Log.i("ProgramacaoPOO", compras.toString());
         Log.i("ProgramacaoPOO", outraCompras.toString());
-
-
 
     }
 }
