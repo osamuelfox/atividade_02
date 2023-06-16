@@ -10,7 +10,7 @@ public class Agenda {
     public Agenda(){
     }
 
-    public Agenda(String titulo) {
+    public Agenda(String titulo, String data, String hora, String local) {
         this.titulo = titulo;
         this.data = data;
         this.hora = hora;

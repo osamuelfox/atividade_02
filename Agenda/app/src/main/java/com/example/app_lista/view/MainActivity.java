@@ -3,8 +3,10 @@ package com.example.app_lista.view;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     Agenda agenda;
     Agenda outraAgenda;
-    List<Agenda> listaAgenda;
+    List<String> categoriaAgenda;
 
     AgendaController controller;
     ListaController listaController;
@@ -34,14 +36,16 @@ public class MainActivity extends AppCompatActivity {
     Button btnbuton_Salvar;
     Button btnbuton_Finalizar;
 
+    Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListaController listaController = new ListaController();
+        listaController = new ListaController();
 
-        listaAgenda = listaController.getListaAgenda();
+        categoriaAgenda = listaController.dadosSpinner();
 
         listaController.getListaAgenda();
 
@@ -56,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         editHora = findViewById(R.id.text_Hora);
         editLocal = findViewById(R.id.text_Local);
 
+        spinner = findViewById(R.id.ListaSpinner);
+
         btnbuton_Limpar = findViewById(R.id.button_Limpar);
         btnbuton_Salvar = findViewById(R.id.button_Salvar);
         btnbuton_Finalizar = findViewById(R.id.button_Finalizar);
@@ -63,7 +69,13 @@ public class MainActivity extends AppCompatActivity {
         editTituloDoCompromisso.setText(agenda.getTitulo());
         editdata.setText(agenda.getData());
         editHora.setText(agenda.getHora());
-        editLocal.setText(agenda.getLocal())    ;
+        editLocal.setText(agenda.getLocal());
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaController.dadosSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+
+        spinner.setAdapter(adapter);
 
         btnbuton_Limpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 editdata.setText("");
                 editHora.setText("");
                 editLocal.setText("");
-
             }
         });
 

@@ -3,8 +3,10 @@ package com.example.app_lista.view;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     Compras compras;
     Compras outraCompras;
-    List<Compras> listaCompras;
+    List<String> listaCompras;
 
     ComprasController controller;
     ListaController listaController;
@@ -33,12 +35,16 @@ public class MainActivity extends AppCompatActivity {
     Button btnbuton_Salvar;
     Button btnbuton_Finalizar;
 
+    Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListaController listaController = new ListaController();
+        listaController = new ListaController();
+
+        listaCompras = listaController.dadosSpinner();
 
         listaController.getListaCompras();
 
@@ -52,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         editQuantidade = findViewById(R.id.text_Quantidade);
         editLocal = findViewById(R.id.text_Local);
 
+        spinner = findViewById(R.id.ListaSpinner);
 
         btnbuton_Limpar = findViewById(R.id.button_Limpar);
         btnbuton_Salvar = findViewById(R.id.button_Salvar);
@@ -61,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
         editQuantidade.setText(compras.getQuantidae());
         editLocal.setText(compras.getLocal());
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaController.dadosSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
 
         btnbuton_Limpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +105,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Log.i("ProgramacaoPOO", outraCompras.toString());
-
     }
 }

@@ -3,19 +3,30 @@ package com.example.app_lista.view;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app_lista.R;
+import com.example.app_lista.controller.ListaController;
+import com.example.app_lista.controller.TarefaController;
 import com.example.app_lista.model.Lista;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     Lista lista;
     Lista outraLista;
+
+    List<String> nomeDaTarefa;
+
+    ListaController controller;
+    TarefaController tarefaController;
 
     EditText editNome;
     EditText editDescricao;
@@ -25,26 +36,31 @@ public class MainActivity extends AppCompatActivity {
     Button btnbuton_Salvar;
     Button btnbuton_Finalizar;
 
+    Spinner spinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lista = new Lista();
-        lista.setNome("Estudar");
-        lista.setDescricao("Estudar Java");
-        lista.setData("28/05/2023");
+        tarefaController = new TarefaController();
+
+        nomeDaTarefa = tarefaController.dadosSpinner();
+
+        tarefaController.getListTarefa();
+
+        controller = new ListaController(MainActivity.this);
+        controller.toString();
 
         outraLista = new Lista();
-        outraLista.setNome("Fazer Compras");
-        outraLista.setDescricao("Comprar arroz");
-        outraLista.setData("26/06/2023");
+        controller.buscar(outraLista);
 
         editNome = findViewById(R.id.text_Nome);
         editDescricao = findViewById(R.id.text_Descricao);
         editData = findViewById(R.id.text_Data);
 
+        spinner = findViewById(R.id.ListaSpinner);
 
         btnbuton_Limpar = findViewById(R.id.button_Limpar);
         btnbuton_Salvar = findViewById(R.id.button_Salvar);
@@ -53,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
         editNome.setText(lista.getNome());
         editDescricao.setText(lista.getDescricao());
         editData.setText(lista.getData());
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, tarefaController.dadosSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+
+        spinner.setAdapter(adapter);
 
 
         btnbuton_Limpar.setOnClickListener(new View.OnClickListener() {
@@ -82,12 +104,12 @@ public class MainActivity extends AppCompatActivity {
                 outraLista.setDescricao(editDescricao.getText().toString());
                 outraLista.setData(editData.getText().toString());
 
-                Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
+                controller.salvar(outraLista);
 
+                Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
             }
         });
 
-        Log.i("ProgramacaoPOO", lista.toString());
         Log.i("ProgramacaoPOO", outraLista.toString());
 
     }

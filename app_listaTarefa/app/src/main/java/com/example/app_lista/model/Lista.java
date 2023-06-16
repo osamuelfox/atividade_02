@@ -6,9 +6,7 @@ public class Lista {
     private String descricao;
     private String Data;
 
-
-    public Lista(){
-
+    public Lista() {
     }
 
     public Lista(String nome, String descricao, String Data) {

@@ -40,7 +40,6 @@ public class AgendaController {
         return outraAgenda;
     }
 
-
     public Agenda buscar(Agenda outraAgenda){
         outraAgenda.setTitulo(preferences.getString("Titulo", ""));
         outraAgenda.setData(preferences.getString("Data", ""));
@@ -52,6 +51,5 @@ public class AgendaController {
     public void limpar ( Agenda Agenda ){
         listaVip.clear();
         listaVip.apply();
-
     }
 }
