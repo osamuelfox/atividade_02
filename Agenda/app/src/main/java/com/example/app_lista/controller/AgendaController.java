@@ -48,7 +48,7 @@ public class AgendaController {
         return outraAgenda;
     }
 
-    public void limpar ( Agenda Agenda ){
+    public void limpar ( Agenda agenda ){
         listaVip.clear();
         listaVip.apply();
     }

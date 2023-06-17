@@ -64,13 +64,15 @@ public class MainActivity extends AppCompatActivity {
         btnbuton_Salvar = findViewById(R.id.button_Salvar);
         btnbuton_Finalizar = findViewById(R.id.button_Finalizar);
 
-        editNomeProduto.setText(compras.getNome());
-        editQuantidade.setText(compras.getQuantidae());
-        editLocal.setText(compras.getLocal());
+        editNomeProduto.setText(outraCompras.getNome());
+        editQuantidade.setText(outraCompras.getQuantidae());
+        editLocal.setText(outraCompras.getLocal());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaController.dadosSpinner());
 
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+
+        spinner.setAdapter(adapter);
 
         btnbuton_Limpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 outraCompras.setLocal(editLocal.getText().toString());
 
                 Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
-
+                controller.salvar(outraCompras);
             }
         });
 

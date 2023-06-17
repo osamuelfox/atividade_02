@@ -46,7 +46,7 @@ public class ComprasController {
         return outraCompras;
     }
 
-    public void limpar ( Compras Compras ){
+    public void limpar ( Compras compras ){
         listaVip.clear();
         listaVip.apply();
 

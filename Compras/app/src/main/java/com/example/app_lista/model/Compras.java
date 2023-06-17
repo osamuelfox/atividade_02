@@ -10,6 +10,7 @@ public class Compras {
 
     }
 
+
     public Compras(String nome, String Quantidae, String Local) {
         this.nome = nome;
         this.Quantidae = Quantidae;
@@ -17,8 +18,6 @@ public class Compras {
 
     }
 
-    public Compras(String listaCompras) {
-    }
 
     public String getNome() {
         return nome;
@@ -32,16 +31,16 @@ public class Compras {
         return Quantidae;
     }
 
-    public void setQuantidae(String Quantidae) {
-        this.Quantidae = Quantidae;
+    public void setQuantidae(String quantidae) {
+        this.Quantidae = quantidae;
     }
 
     public String getLocal() {
         return Local;
     }
 
-    public void setLocal(String Local) {
-        Local = Local;
+    public void setLocal(String local) {
+        this.Local = local;
     }
 
     @Override

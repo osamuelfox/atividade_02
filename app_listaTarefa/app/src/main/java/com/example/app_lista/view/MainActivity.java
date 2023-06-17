@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
         btnbuton_Salvar = findViewById(R.id.button_Salvar);
         btnbuton_Finalizar = findViewById(R.id.button_Finalizar);
 
-        editNome.setText(lista.getNome());
-        editDescricao.setText(lista.getDescricao());
-        editData.setText(lista.getData());
+        editNome.setText(outraLista.getNome());
+        editDescricao.setText(outraLista.getDescricao());
+        editData.setText(outraLista.getData());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, tarefaController.dadosSpinner());
 
@@ -104,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
                 outraLista.setDescricao(editDescricao.getText().toString());
                 outraLista.setData(editData.getText().toString());
 
+                Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
                 controller.salvar(outraLista);
 
-                Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
             }
         });
 

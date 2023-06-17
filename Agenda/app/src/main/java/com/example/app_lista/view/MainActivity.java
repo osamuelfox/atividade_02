@@ -66,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
         btnbuton_Salvar = findViewById(R.id.button_Salvar);
         btnbuton_Finalizar = findViewById(R.id.button_Finalizar);
 
-        editTituloDoCompromisso.setText(agenda.getTitulo());
-        editdata.setText(agenda.getData());
-        editHora.setText(agenda.getHora());
-        editLocal.setText(agenda.getLocal());
+        editTituloDoCompromisso.setText(outraAgenda.getTitulo());
+        editdata.setText(outraAgenda.getData());
+        editHora.setText(outraAgenda.getHora());
+        editLocal.setText(outraAgenda.getLocal());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaController.dadosSpinner());
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 outraAgenda.setLocal(editLocal.getText().toString());
 
                 Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
-
+                controller.salvar(outraAgenda);
             }
         });
 

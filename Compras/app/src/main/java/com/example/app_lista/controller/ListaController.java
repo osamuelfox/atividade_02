@@ -1,6 +1,5 @@
 package com.example.app_lista.controller;
 
-import com.example.app_lista.model.Compras;
 import com.example.app_lista.model.Lista;
 
 import java.util.ArrayList;
@@ -12,12 +11,11 @@ public class ListaController {
 
     public List getListaCompras() {
 
-        listaCompras = new ArrayList<Compras>();
+        listaCompras = new ArrayList<Lista>();
 
-        listaCompras.add(new Compras("Arroz"));
-        listaCompras.add(new Compras("Feijao"));
-        listaCompras.add(new Compras("Mandioca"));
-        listaCompras.add(new Compras());
+        listaCompras.add(new Lista("Arroz"));
+        listaCompras.add(new Lista("Feijao"));
+        listaCompras.add(new Lista("Mandioca"));
 
         return listaCompras;
     }
