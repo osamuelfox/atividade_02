@@ -10,12 +10,10 @@ public class Compras {
 
     }
 
-
     public Compras(String nome, String Quantidae, String Local) {
         this.nome = nome;
         this.Quantidae = Quantidae;
         this.Local = Local;
-
     }
 
 

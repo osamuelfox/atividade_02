@@ -99,10 +99,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String curso = spinner.getSelectedItem().toString();
+
                 outraAgenda.setTitulo(editTituloDoCompromisso.getText().toString());
                 outraAgenda.setData(editdata.getText().toString());
                 outraAgenda.setHora(editHora.getText().toString());
                 outraAgenda.setLocal(editLocal.getText().toString());
+                outraAgenda.setCurso(curso);
 
                 Toast.makeText(MainActivity.this, " Salvo ", Toast.LENGTH_SHORT).show();
                 controller.salvar(outraAgenda);
